@@ -1,5 +1,5 @@
 {
-  "name": "mow-generate-ordered-signs-service",
+  "name": "mow-ordered-signs-service",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
