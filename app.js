@@ -6,7 +6,10 @@ import {
   sparqlEscapeString,
   update,
   uuid,
+  errorHandler,
 } from "mu";
+
+app.use(errorHandler);
 
 app.post("/generate-ordered-signs", async (req, res) => {
   const trafficMeasureUris = await getTrafficMeasureUris();
