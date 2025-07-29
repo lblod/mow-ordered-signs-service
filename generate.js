@@ -115,3 +115,5 @@ async function checkOrderedSign(measureUri, signUri) {
   const queryResult = await query(checkOrderedSignQuery);
   return !!queryResult.results.bindings[0];
 }
+
+export default router;
