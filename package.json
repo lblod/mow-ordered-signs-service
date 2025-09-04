@@ -1,5 +1,5 @@
 {
-  "name": "mow-generate-ordered-signs-service",
+  "name": "mow-ordered-signs-service",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,6 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "author": "redpencil.io",
-  "license": "MIT"
+  "author": "redpencil.io",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^2.2.0"
+  }
 }
