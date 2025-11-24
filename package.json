@@ -5,11 +5,18 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "author": "redpencil.io",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^2.2.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.7",
+    "changesets-release-it-plugin": "^0.2.0",
+    "release-it": "^19.0.6"
   }
 }
