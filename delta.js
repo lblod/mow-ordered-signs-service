@@ -56,7 +56,7 @@ async function getSign(signListItemUri) {
             }
         } 
     `;
-  const queryResult = await query(signUriQuery);
+  const queryResult = await query(signUriQuery, { sudo: true });
   return queryResult.results.bindings[0]?.signUri.value;
 }
 
@@ -75,7 +75,7 @@ async function linkSignToMeasure(signUri, measureUri) {
         } 
     `;
   console.log(signUriQuery);
-  await update(signUriQuery);
+  await update(signUriQuery, { sudo: true });
 }
 
 function extractDeletePairs(deltas) {
@@ -114,7 +114,7 @@ async function unlinkSignToMeasure(signUri, measureUri) {
         } 
     `;
   console.log(unlinkSignQuery);
-  await update(unlinkSignQuery);
+  await update(unlinkSignQuery, { sudo: true });
 }
 
 async function removeSignListItem(signListItem) {
@@ -135,7 +135,7 @@ async function removeSignListItem(signListItem) {
         } 
     `;
   console.log(removeSignListItemQuery);
-  await update(removeSignListItemQuery);
+  await update(removeSignListItemQuery, { sudo: true });
 }
 
 export default router;

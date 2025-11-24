@@ -25,7 +25,7 @@ async function getTrafficMeasureUris() {
       ?uri a mobiliteit:Mobiliteitmaatregelconcept
     }
   `;
-  const queryResult = await query(uriQuery);
+  const queryResult = await query(uriQuery, { sudo: true });
   return queryResult.results.bindings.map((binding) => binding.uri.value);
 }
 
@@ -57,7 +57,7 @@ async function getSignsAndLabel(measureUri) {
       }
     } 
   `;
-  const queryResult = await query(signsAndLabelQuery);
+  const queryResult = await query(signsAndLabelQuery, { sudo: true });
   if (!queryResult.results.bindings[0]) return {};
   const measureLabel = queryResult.results.bindings[0].label.value;
   const signs = queryResult.results.bindings.map((binding) => ({
@@ -93,7 +93,7 @@ async function generateOrderedSign(measureUri, signUri, position) {
     } 
   `;
   console.log(insertDataQuery);
-  await update(insertDataQuery);
+  await update(insertDataQuery, { sudo: true });
 }
 
 async function checkOrderedSign(measureUri, signUri) {
@@ -112,7 +112,7 @@ async function checkOrderedSign(measureUri, signUri) {
       }
     } 
   `;
-  const queryResult = await query(checkOrderedSignQuery);
+  const queryResult = await query(checkOrderedSignQuery, { sudo: true });
   return !!queryResult.results.bindings[0];
 }
 
