@@ -38,7 +38,6 @@ async function generateOrderedSigns(uri) {
     const itExists = await checkOrderedSign(uri, sign.uri);
     if (itExists) continue;
     await generateOrderedSign(uri, sign.uri, position);
-    console.log("ordered sign generated");
   }
 }
 
@@ -92,7 +91,6 @@ async function generateOrderedSign(measureUri, signUri, position) {
       }
     } 
   `;
-  console.log(insertDataQuery);
   await update(insertDataQuery, { sudo: true });
 }
 
