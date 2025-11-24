@@ -1,6 +1,6 @@
 {
   "name": "mow-ordered-signs-service",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "app.js",
   "type": "module",
